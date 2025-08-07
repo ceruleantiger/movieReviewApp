@@ -24,4 +24,10 @@ This app requires an API key, you need to register for one, then open `server.js
 replace the line:
 ```js
 const apikey = 'yourapikey'
+```
+
+## Data
+The `data/` folder includes the SQLite database file (`sqlite.db`) with example data.
+It doesn't contain real user data.
+
 

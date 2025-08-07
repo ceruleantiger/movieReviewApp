@@ -1,0 +1,57 @@
+h1, h2, h3 {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #00a2a2;
+}
+
+/* welcom */
+.hello {
+    color: deepskyblue;
+    font-weight: bold;
+}
+
+/* buttons */
+button {
+    background-color: #005f99;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back {
+    background-color: #005d5d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout {
+    background-color: mediumpurple;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* admin table */
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 50%;
+    background-color: #EEEEEE;
+    font-size: 20px;
+}
+
+td, th {
+    border: 1px solid teal;
+    padding: 12px;
+}
+

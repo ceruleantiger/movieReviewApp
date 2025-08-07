@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <style type="text/css">
+table{
+   border-collapse: collapse;
+   border: 1px solid black;
+   width: 50%;
+   background-color: #EEEEEE;
+   font-size: 20px;
+}
+td, th {
+   border: 1px solid teal;
+   padding: 12px;
+}
+   </style>
+
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   <h1>{{title}}</h1>
+<div> 
+   <table>
+      <thead>
+         <tr>
+            <th>user ID</th>
+            <th>role</th>
+         </tr>
+      </thead>
+
+      <tbody>
+         {{#each users}}
+         <tr>
+            <td>{{this.userid}}</td>
+            <td>{{this.role}}</td>
+         </tr>
+         {{/each}} 
+      </tbody>
+
+   </table>
+   
+   <br>
+   <form action="/" method="GET">
+   <button class="back" type="submit">Back to Search</button>
+   </form>
+   
+</div>
+</body>
+</html>

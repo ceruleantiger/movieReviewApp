@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+
+  <style>
+    .hello {
+      color: deepskyblue;
+      font-weight: bold;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+   <h1>{{title}}</h1>
+
+   {{#if user}}
+   <p class="hello">Hello, {{user.userid}}</p>
+   {{/if}}
+
+ 
+   {{#if reviews.length}}
+   {{#each reviews}} 
+   <div class="review">
+      <h3>Movie: {{this.movie_title}}</h3>
+      <p>Rating: {{this.rating}}</p>
+      <p>Review: {{this.review}}</p>
+   </div>
+   {{/each}} 
+   {{else}}
+      <p>no reviews yet</p>
+   {{/if}}
+
+   <form action="/admin" method="GET">
+   <button type="submit">Admin Panel</button>
+   </form>
+
+   <br>
+   <form action="/" method="GET">
+   <button class="back" type="submit">Back to Search</button>
+   </form>
+
+   <br>
+   <form method="POST" action="/logout">
+   <button class="logout" type="submit">Logout</button>
+   </form>
+</body>
+</html>

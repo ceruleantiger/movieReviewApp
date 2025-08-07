@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>{{title}}</h1>
+  
+  <form method="GET" action="/search">
+    <input name="title" placeholder="enter a movie title" {{#unless user}}disabled{{/unless}}>
+    <button type="submit" {{#unless user}}disabled{{/unless}}>Search</button>
+  </form>   
+    
+
+  {{#if user}}
+    <p class="hello">Welcome, {{user.userid}} ({{user.role}})</p>
+    
+    <br><br>
+    <a href="/my-reviews">My Reviews</a>
+
+    <br><br><hr><br><br>
+    <form method="POST" action="/logout">
+    <button class="logout" type="submit">Logout</button>
+    </form>
+
+  {{else}}
+    
+    {{#if error}}
+    <p style="color:rgb(77, 20, 232)">{{error}}</p>
+    {{/if}}
+    
+    <div>
+      <form method="POST" action="/login">
+        <h2>Login</h2>
+        <label>User ID: </label><br>
+        <input type="text" name="userid" required><br><br>
+        <label>Password: </label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div>
+      <form method="POST" action="/register">
+        <h2>Register</h2>
+        <label>User ID: </label><br>
+        <input type="text" name="userid" required><br><br>
+        <label>Password: </label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+
+  {{/if}}
+  
+</body>
+</html>
+
+

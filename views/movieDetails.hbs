@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> {{movie.title}} </title>
+      <link rel="stylesheet" href="/style.css">
+   </head>
+
+   <body>
+      <h1>{{movie.title}}</h1>
+      <div>
+         <p>Release: {{movie.release_date}}</p>
+         <p>Director: {{director}}</p>
+         <p>Starring: {{stars}}</p>
+         <p>Rating: {{movie.vote_average}}</p>
+         <p>{{movie.overview}}</p>
+
+         {{#if movie.poster_path}}
+            <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Movie Poster" style="max-width:200px;">
+         {{/if}}
+         <hr>
+
+         <h2>Submit your review</h2>
+
+         <form method="POST" action="/submit-review">
+           <input type="hidden" name="movie_id" value="{{movie.id}}">
+           <input type="hidden" name="movie_title" value="{{movie.title}}">
+           
+           <label>Rating (1-10):</label><br>
+           <input type="number" name="rating" min="1" max="10" required><br><br>
+
+         <label>Review:</label><br>
+         <textarea name="review" rows="10" cols="60" required></textarea><br><br>
+
+         <button type="submit">Submit review</button>
+         </form>
+
+         <hr>
+         <a href="/reviews?movie_id={{movie.id}}&movie_title={{movie.title}}">All reviews for the movie</a><br><br>
+         
+      </div>
+      <br>
+      <form action="/" method="GET">
+      <button class="back" type="submit">Back to Search</button>
+      </form>
+   </body>
+</html>

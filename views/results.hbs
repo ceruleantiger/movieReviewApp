@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> {{title}} </title>
+      <style type="text/css">
+
+      </style>
+      <link rel="stylesheet" href="/style.css">
+   
+   </head>
+   <body>
+      <h1>{{title}}</h1>
+      {{#if error}}
+         <p style="color: black;">{{error}}</p>
+      {{else}}
+         {{#each result}}
+            <div>
+            <h2><a href="/movie/{{this.id}}">{{this.title}}</a></h2>
+            <p>release: {{this.release_date}}</p>
+            {{#if this.poster_path}}
+            <img src="https://image.tmdb.org/t/p/w200{{this.poster_path}}" alt="{{this.title}} poster">
+            {{/if}}
+            <p>overview: {{this.overview}}</p>
+            </div>
+         {{/each}}
+      {{/if}}
+
+      <br>
+      <form action="/" method="GET">
+      <button class="back" type="submit">Back to Search</button>
+      </form>
+   </body>
+</html>

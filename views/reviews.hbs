@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   <h1>{{title}}</h1>
+<div> 
+   {{#if reviews.length}}
+   {{#each reviews}} 
+      <p>user: {{this.userid}}</p>
+      <p>rating: {{this.rating}}</p>
+      <p>review: {{this.review}}</p>
+   {{/each}} 
+   {{else}}
+      <p>no reviews yet</p>
+   {{/if}}
+</div>
+
+<br>
+   <form action="/" method="GET">
+   <button class="back" type="submit">Back to Search</button>
+   </form>
+</body>
+</html>
